@@ -1,0 +1,113 @@
+============ Telechips Video IP(Intellectual Property) ============
+
+${Series}_${X}${N} Explanation
+ (ex) VPU_D5, VPU_C7, HEVC_D2, VPU_4K_D2
+ - Series
+  : Series represents different categories like VPU, HEVC, VP9, and VPU_4K
+ - X
+  : X indicates the type of functionality:
+   * D: If it is Decoder only.
+   * E: If it is Encoder only.
+   * C: If it includes both Encoder and Decoder functions.
+ - N
+  : N represents a numbering sequence.
+
+ VPU Series
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | IP Name     | VPU IP     | VPU HEADER          | VPU API                     | legacy                     |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | N/A         | VPU_X1     |                     |                             |                            |
+ | N/A         | VPU_X2     |                     |                             |                            |
+ | N/A         | VPU_X3     |                     |                             |                            |
+ | N/A         | VPU_X4     |                     |                             |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Coda8550    | VPU_C5     | TCC_VPU_D5.h        | Decoder: TCC_VPU_DEC        |                            |
+ |             |            |                     | Encoder: TCC_VPU_ENC        |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Boda950     | VPU_D6     | TCC_VPU_D6.h        | Decoder: TCC_VPU_DEC        |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Coda960     | VPU_C7     | TCC_VPU_C7_CODEC.h  | Decoder: TCC_VPU_DEC        |                            |
+ |             |            |                     | Encoder: TCC_VPU_ENC        |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+
+ JPU Series
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | IP Name     | VPU IP     | VPU HEADER          | VPU API                     | legacy                     |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | N/A         | JPU_X1     |                     |                             |                            |
+ | N/A         | JPU_X2     |                     |                             |                            |
+ | N/A         | JPU_X3     |                     |                             |                            |
+ | N/A         | JPU_X4     |                     |                             |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Coda8550j   | JPU_C5     | TCC_JPU_C5.h        | Decoder: TCC_JPU_DEC        | TCC_JPU_CODEC.h            |
+ |             |            |                     | Encoder: TCC_JPU_ENC        |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Coda-J10    | JPU_C6     | TCC_JPU_C6.h        | Decoder: TCC_VPU_DEC        |                            |
+ |             |            |                     | Encoder: TCC_JPU_ENC        |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+
+ HEVC Series
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | IP Name     | VPU IP     | VPU HEADER          | VPU API                     |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Wave410     | HEVC_D1    | TCC_HEVC_D1.h       | Decoder: TCC_HEVC_DEC       | IP: HEVC_D8                |
+ |             |            |                     |                             | TCC_HEVCDEC.h              |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Wave410     | HEVC_D2    | TCC_HEVC_D2.h       | Decoder: TCC_HEVC_DEC       | IP: HEVC_D9 DualCore       |
+ |             |            |                     |                             | TCC_HEVCDEC.h              |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Wave420L    | HEVC_E3    | TCC_HEVC_E3.h       | Encoder: TCC_HEVC_ENC       | API: TCC_VPU_HEVC_ENC      |
+ |             |            |                     |                             | TCC_VPU_HEVC_ENC.h         |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+
+ VP9 Series
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | IP Name     | VPU IP     | VPU HEADER          | VPU API                     |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Hantro G2V2 | VP9_D1     | TCC_VP9DEC.h        | Decoder: TCC_VP9_DEC        | IP: VP9_D9                 |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+
+ VPU4K Series
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | IP Name     | VPU IP     | VPU HEADER          | VPU API                     |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | N/A         | VPU4K_X1   |                     |                             |                            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+ | Wave512     | VPU4K_D2   | TCC_VPU4K_D2.h      | Decoder: TCC_VPU4K_DEC      | API: TCC_VPU_4K_D2_DEC     |
+ |             |            |                     |                             | TCC_VPU_4K_D2.h            |
+ |-------------|------------|---------------------|-----------------------------|----------------------------|
+
+-----------------------------------------------------------------------------------
+Boda950 Supported profiles
+ -
+Coda-J10 Supported profiles
+ -
+Coda8550 Supported profiles
+ -
+Coda8550j Supported profiles
+ -
+Coda960 Supported profiles (Encoder)
+ - H.264 Base, Main, High profiles, MVC Stereo high profile
+ - MPEG-4 Simple profile
+ - H.263 Profile3
+Coda960 Supported profiles (Decoder)
+ - H.264 Base, Main, High profiles, MVC Stereo high profile
+ - MPEG-4 Simple, Advanced simple profiles
+ - H.263 Profile3
+ - VP8 WebM/WebP
+WAVE410 Supported profiles (Decoder)
+ - HEVC Main and Main10 profiles @ L5.0 High-tier
+ - Max 8192x4096
+ - Min 8x8
+WAVE420L Supported profiles
+ - HEVC Main and Main10 profiles
+WAVE512 Supported profiles (Decoder)
+ - HEVC Main and Main10 profiles @ L5.1 High-tier
+ - Max 8192x4096
+ - Min 8x8
+WAVE521L Supported profiles (Encoder)
+ - HEVC Main and Main10 profiles
+ - AVC Constrained Baseline, High, and High10 profiles
+
+(Note) L - Low cost version, supports 8bit only, supports I and P frame type encoding only
+       WAVE5/6 series do not support interlaced coding tools of H.264/AVC.

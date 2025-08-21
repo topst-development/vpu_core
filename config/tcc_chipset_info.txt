@@ -1,0 +1,15 @@
+============ Telechips Chipset ===========
+
+TCC750x (N-Dolphin, N-D)
+ - WAVE420L (HEVC_E3)
+    Encoder: HEVC - 8bit, 4K30p
+
+TCC805x (Dolphin3, D3, D3M)
+ - Coda960 (VPU_C7)
+    Decoder: H.264 - FHD60p
+    Encoder: H.264 - FHD30p
+ - WAVE512 (VPU4K_D2)
+    Decoder: HEVC, VP9 - 10bit, 4K60p
+ - WAVE420L (HEVC_E3)
+    Encoder: HEVC - 8bit, 4K30p
+
