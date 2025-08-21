@@ -1,0 +1,24 @@
+Debug
+*.user
+*.ncb
+*.suo
+*.vpwhist
+bin
+
+# ignore cmake-related
+cmake_install.cmake
+CMakeFiles
+CMakeCache.txt
+Makefile
+
+# ignore coverity-related
+idir
+.vscode/*
+_cov_results_/*
+coverity.conf
+.vscode
+cov_*sh
+tc_coverity
+
+*.xlsx
+setup.mk
